@@ -1,0 +1,235 @@
+/* LX Portfolio Modern Styles */
+:root {
+  --primary: #4f46e5;
+  --secondary: #f3f4f6;
+  --accent: #f59e42;
+  --dark: #18181b;
+  --light: #fff;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: var(--secondary);
+  color: var(--dark);
+  line-height: 1.6;
+}
+header {
+  background: var(--light);
+  box-shadow: var(--shadow);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--primary);
+  letter-spacing: 2px;
+}
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links a:hover {
+  color: var(--primary);
+}
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+.menu-toggle span {
+  width: 28px;
+  height: 3px;
+  background: var(--primary);
+  border-radius: 2px;
+  display: block;
+}
+.hero-section {
+  background: linear-gradient(120deg, var(--primary) 60%, var(--accent) 100%);
+  color: var(--light);
+  padding: 6rem 2rem 5rem 2rem;
+  text-align: center;
+}
+.hero-content h1 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.btn {
+  background: var(--accent);
+  color: var(--light);
+  padding: 0.8rem 2.2rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: background 0.2s, transform 0.2s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn:hover {
+  background: var(--primary);
+  transform: translateY(-2px) scale(1.04);
+}
+section {
+  padding: 4rem 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+section h2 {
+  font-size: 2rem;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.about-section p {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+}
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.project-card {
+  background: var(--light);
+  border-radius: 18px;
+  box-shadow: var(--shadow);
+  padding: 2rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+}
+.project-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(79,70,229,0.12);
+}
+.services-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.services-list li {
+  background: var(--primary);
+  color: var(--light);
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  box-shadow: var(--shadow);
+  margin-bottom: 0.5rem;
+}
+.contact-section form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+.contact-section input,
+.contact-section textarea {
+  padding: 0.9rem 1.2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: inherit;
+  resize: none;
+}
+.contact-section textarea {
+  min-height: 120px;
+}
+.contact-section button {
+  margin-top: 0.5rem;
+}
+#form-message {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  text-align: center;
+}
+footer {
+  background: var(--light);
+  color: #6b7280;
+  text-align: center;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  font-size: 1rem;
+  box-shadow: var(--shadow);
+}
+@media (max-width: 900px) {
+  .navbar {
+    padding: 1rem 1rem;
+  }
+  section {
+    padding: 3rem 1rem;
+  }
+}
+@media (max-width: 700px) {
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background: var(--light);
+    flex-direction: column;
+    width: 180px;
+    gap: 0;
+    box-shadow: var(--shadow);
+    display: none;
+    border-radius: 0 0 0 18px;
+    overflow: hidden;
+  }
+  .nav-links.active {
+    display: flex;
+  }
+  .nav-links li {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 1rem 0;
+    text-align: center;
+  }
+  .menu-toggle {
+    display: flex;
+  }
+}
+@media (max-width: 500px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  section h2 {
+    font-size: 1.3rem;
+  }
+  .btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
