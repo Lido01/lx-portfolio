@@ -13,17 +13,19 @@
   padding: 0;
 }
 body {
-  font-family: 'Segoe UI', Arial, sans-serif;
-  background: var(--secondary);
+  font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+  background: linear-gradient(120deg, #f3f4f6 60%, #f5f5fa 100%);
   color: var(--dark);
-  line-height: 1.6;
+  line-height: 1.7;
+  min-height: 100vh;
 }
 header {
-  background: var(--light);
+  background: rgba(255,255,255,0.95);
   box-shadow: var(--shadow);
   position: sticky;
   top: 0;
   z-index: 100;
+  border-bottom: 2px solid #f3f4f6;
 }
 .navbar {
   display: flex;
@@ -34,10 +36,11 @@ header {
   padding: 1rem 2rem;
 }
 .logo {
-  font-size: 2rem;
+  font-size: 2.2rem;
   font-weight: bold;
   color: var(--primary);
   letter-spacing: 2px;
+  text-shadow: 1px 2px 8px #f59e4233;
 }
 .nav-links {
   display: flex;
@@ -66,20 +69,17 @@ header {
   border-radius: 2px;
   display: block;
 }
-.hero-section {
-  background: linear-gradient(120deg, var(--primary) 60%, var(--accent) 100%);
+.main-image {
+  background: linear-gradient(120deg, #4f46e5 60%, #f59e42 100%);
   color: var(--light);
-  padding: 6rem 2rem 5rem 2rem;
-  text-align: center;
 }
-.hero-content h1 {
-  font-size: 2.8rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+.main-image h1, .main-image h2, .main-image h3, .main-image h4 {
+  color: #fff;
+  text-shadow: 1px 2px 8px #18181b33;
 }
-.hero-content p {
-  font-size: 1.3rem;
-  margin-bottom: 2rem;
+.main-image .lead {
+  color: #fffbe7;
+  font-size: 1.2rem;
 }
 .btn {
   background: var(--accent);
@@ -99,22 +99,25 @@ header {
   background: var(--primary);
   transform: translateY(-2px) scale(1.04);
 }
-section {
   padding: 4rem 2rem;
-  max-width: 900px;
+  max-width: 950px;
   margin: 0 auto;
+  background: rgba(255,255,255,0.95);
+  border-radius: 18px;
+  box-shadow: 0 2px 16px rgba(79,70,229,0.04);
+  margin-bottom: 2.5rem;
 }
-section h2 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--primary);
   margin-bottom: 1.5rem;
   text-align: center;
+  letter-spacing: 1px;
 }
-.about-section p {
+.about-section p, .section-title p {
   text-align: center;
   max-width: 700px;
   margin: 0 auto;
-  font-size: 1.1rem;
+  font-size: 1.13rem;
 }
 .projects-grid {
   display: grid;
@@ -134,32 +137,38 @@ section h2 {
   transform: translateY(-6px) scale(1.03);
   box-shadow: 0 8px 32px rgba(79,70,229,0.12);
 }
-.services-list {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-top: 2rem;
+.service-item {
+  background: #f3f4f6;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px rgba(79,70,229,0.07);
+  padding: 2.2rem 1.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+  text-align: left;
+  min-height: 220px;
 }
-.services-list li {
-  background: var(--primary);
-  color: var(--light);
-  padding: 1rem 2rem;
-  border-radius: 30px;
-  font-weight: 500;
-  font-size: 1.1rem;
-  box-shadow: var(--shadow);
-  margin-bottom: 0.5rem;
+.service-item .icon {
+  font-size: 2.5rem;
+  color: var(--primary);
+  margin-right: 1.2rem;
 }
-.contact-section form {
+.service-item:hover {
+  background: #fffbe7;
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(245,158,66,0.13);
+}
+.php-email-form {
   display: flex;
   flex-direction: column;
   gap: 1.2rem;
-  max-width: 400px;
+  max-width: 450px;
   margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(79,70,229,0.07);
+  padding: 2rem 1.5rem;
 }
-.contact-section input,
-.contact-section textarea {
+.php-email-form input,
+.php-email-form textarea {
   padding: 0.9rem 1.2rem;
   border: 1px solid #e5e7eb;
   border-radius: 10px;
@@ -167,14 +176,28 @@ section h2 {
   font-family: inherit;
   resize: none;
 }
-.contact-section textarea {
+.php-email-form textarea {
   min-height: 120px;
 }
-.contact-section button {
+.php-email-form button {
   margin-top: 0.5rem;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 0.7rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
 }
-#form-message {
-  margin-top: 0.5rem;
+.php-email-form button:hover {
+  background: var(--accent);
+}
+.php-email-form .loading,
+.php-email-form .error-message,
+.php-email-form .sent-message {
+  display: none;
   font-size: 1rem;
   text-align: center;
 }
@@ -186,6 +209,7 @@ footer {
   margin-top: 3rem;
   font-size: 1rem;
   box-shadow: var(--shadow);
+  border-top: 2px solid #f3f4f6;
 }
 @media (max-width: 900px) {
   .navbar {
