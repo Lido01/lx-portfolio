@@ -14,7 +14,7 @@ LX Portfolio is a modern, responsive personal portfolio website for Lidetu Tesfa
 - **Services:** List of professional services offered.
 - **Contact:** Contact form and real map location (Adama, Ethiopia – ASTU).
 - **Responsive Design:** Looks great on desktop and mobile devices.
-- **Modern UI:** custom CSS, and smooth animations.
+- **Modern UI:** custom CSS, and smooth animations. Later with vite react and tailwind css styles.
 
 ## Technologies Used
 - HTML5, CSS3 (custom)
